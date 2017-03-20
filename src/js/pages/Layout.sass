@@ -1,0 +1,74 @@
+@import 'palette';
+a
+  color: $specialColor
+  text-decoration: none
+  &:hover
+    color: lighten($specialColor, 40%)
+    text-decoration: none
+
+
+.pad
+  padding: 1.4em
+
+.btnRecipe
+  @extend .pad
+  background-color: $textColor
+  width: 100%
+  cursor: pointer
+  border-color: darken($textColor, 10%)
+  margin: 0.4em 0;
+
+body
+  margin: 0
+  padding: 0
+  color: $textColor
+  background-color: $backgroundColor
+
+.appContainer
+  display: flex
+  height: 100vh
+  box-sizing: border-box
+
+.listRecipe
+  flex: 1
+  height: 100vh
+  overflow: auto
+
+  h1
+    padding: 0.4em 1.4em
+    margin: 0
+    text-transform: uppercase
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      background-color: $textColor2
+      border: 1px dashed $specialColor
+      margin-bottom: 0.2em
+      line-height: 1.4em
+      padding: 0.4em
+      border-radius: 5px
+      &:hover
+        color: $specialColor
+        background-color: lighten($strangeColor, 50%);
+
+.detailsRecipe
+  @extend .pad
+  flex: 1
+  border-left: 1px solid $borderColor;
+
+input, textarea
+  border-radius: 3px
+  line-height: 1.4em
+  padding: 0.4em
+  margin: 0.4em
+  width: 95%
+
+textarea
+  resize: none
+
+@media screen and (max-width: 800px)
+  .appContainer
+    flex-direction: column
