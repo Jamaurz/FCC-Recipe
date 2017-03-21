@@ -32,9 +32,9 @@ export default class myModalComopnent extends React.Component {
         return (
             <div class='myModal'>
                 <input type="text" ref={(name) => this.nameRecipe = name} placeholder="enter name" />
-                <textarea ref={(ing) => this.ingRecipe = ing} placeholder="enter ingrediebnts..." ></textarea>
+                <textarea ref={(ing) => this.ingRecipe = ing} placeholder="enter ingredients..." ></textarea>
                 <input
-                    type='tbutton'
+                    type='button'
                     class='btnRecipe'
                     onClick={this.addNameRecipe.bind(this)}
                     value='Add New Recipe'>

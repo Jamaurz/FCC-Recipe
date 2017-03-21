@@ -9,7 +9,10 @@ import './Edit.sass'
 @connect((store, ownProps) => {
     return {
         params: ownProps.routeParams,
-        recipe: store.common.recipe
+        recipe: store.common.recipe,
+        current: store.common.recipe.filter((rec) => {
+            return rec.id == ownProps.routeParams.id;
+        })
     };
 })
 export default class Recipe extends React.Component {
@@ -26,13 +29,14 @@ export default class Recipe extends React.Component {
     }
 
     render() {
-        let current = this.props.recipe.filter((rec) => {
-            return rec.id == Number(this.props.params.id);
-        });
-        let { name, ing } = current[0];
-        console.log(current[0], name, ing);
-        ing = ing.split(',');
-        let path = "recipe/" + this.props.params.id;
+        let name = ' ',
+            ing = [],
+            path = ' ';
+        if(this.props.current[0]) {
+            name = this.props.current[0].name;
+            ing = this.props.current[0].ing.split(',');
+            path = "recipe/" + this.props.params.id;
+        }
         return (
             <div class='edit'>
                 <Link to={path}>Back</Link>

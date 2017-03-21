@@ -18,6 +18,7 @@ export default class Layout extends React.Component {
         super(props);
     }
 
+
     componentDidUpdate() {
         console.log("COMPONENT DID UPDATE");
         this.props.dispatch(upadeRecipe());
@@ -26,7 +27,7 @@ export default class Layout extends React.Component {
     addModal() {
         modal.add(myModalComopnent, {
             title: 'Add New Recipe',
-            size: 'large', // large, medium or small,
+            size: 'medium', // large, medium or small,
             closeOnOutsideClick: false, // (optional) Switch to true if you want to close the modal by clicking outside of it,
             hideTitleBar: false, // (optional) Switch to true if do not want the default title bar and close button,
             hideCloseButton: false // (optional) if you don't wanna show the top right close button
